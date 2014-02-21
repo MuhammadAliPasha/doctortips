@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="false"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ImageButton
+                android:id="@+id/view_health"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/empty_string"
+                android:scaleType="fitCenter"
+                android:onClick="getHealthTips"
+                android:src="@drawable/health_button" />
+
+            <ImageButton
+                android:id="@+id/view_beauty"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/empty_string"
+                android:scaleType="fitCenter"
+                android:onClick="getBeautyTips"
+                android:src="@drawable/beauty_button" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ImageButton
+                android:id="@+id/view_hair"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/empty_string"
+                android:scaleType="fitCenter"
+                android:onClick="getHairTips"
+                android:src="@drawable/hair_button" />
+
+            <ImageButton
+                android:id="@+id/view_weight"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/empty_string"
+                android:scaleType="fitCenter"
+                android:onClick="getWeightTips"
+                android:src="@drawable/weight_button" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

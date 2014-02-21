@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="false"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ImageButton
+                android:id="@+id/view_nail"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/empty_string"
+                android:onClick="getNailTips"
+                android:scaleType="fitCenter"
+                android:src="@drawable/nails_button" />
+
+            <ImageButton
+                android:id="@+id/view_diet"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/empty_string"
+                android:onClick="getDietTips"
+                android:scaleType="fitCenter"
+                android:src="@drawable/diet_button" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ImageButton
+                android:id="@+id/view_fitness"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/empty_string"
+                android:onClick="getFitnessTips"
+                android:scaleType="fitCenter"
+                android:src="@drawable/fitness_button" />
+
+            <ImageButton
+                android:id="@+id/view_makeup"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/empty_string"
+                android:onClick="getMakeupTips"
+                android:scaleType="fitCenter"
+                android:src="@drawable/makeup_button" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

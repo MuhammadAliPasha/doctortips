@@ -1,0 +1,8 @@
+package com.ali.doctortipss;
+
+public class TipsResponses {
+	public String Tips = "{\"records\":[{\"id\":\"13\",\"title\":\"An apple a day keeps the doctor away.An apple a day keeps the doctor away.\",\"type\":\"0\"},{\"id\":\"1\",\"title\":\"An apple a day keeps the doctor away.\",\"type\":\"1\"},{\"id\":\"2\",\"title\":\"An apple a day keeps the doctor away.An apple a day keeps the doctor away.An apple a day keeps the doctor away.\",\"type\":\"2\"},{\"id\":\"3\",\"title\":\"An apple a day keeps the doctor away.\",\"type\":\"5\"},{\"id\":\"4\",\"title\":\"An apple a day keeps the doctor away.An apple a day keeps the doctor away.\",\"type\":\"2\"},{\"id\":\"5\",\"title\":\"An apple a day keeps the doctor away.\",\"type\":\"4\"},{\"id\":\"6\",\"title\":\"An apple a day keeps the doctor away.An apple a day keeps the doctor away.An apple a day keeps the doctor away.An apple a day keeps the doctor away.\",\"type\":\"2\"},{\"id\":\"7\",\"title\":\"An apple a day keeps the doctor away.\",\"type\":\"3\"},{\"id\":\"8\",\"title\":\"An apple a day keeps the doctor away.An apple a day keeps the doctor away.An apple a day keeps the doctor away.An apple a day keeps the doctor away.\",\"type\":\"0\"},{\"id\":\"9\",\"title\":\"An apple a day keeps the doctor away.\",\"type\":\"3\"},{\"id\":\"10\",\"title\":\"An apple a day keeps the doctor away.\",\"type\":\"4\"},{\"id\":\"11\",\"title\":\"An apple a day keeps the doctor away.\",\"type\":\"0\"},{\"id\":\"12\",\"title\":\"An apple a day keeps the doctor away.\",\"type\":\"0\"},{\"id\":\"15\",\"title\":\"An apple a day keeps the doctor away.\",\"type\":\"0\"},{\"id\":\"14\",\"title\":\"An apple a day keeps the doctor away.\",\"type\":\"3\"}],\"totalrecords\":\"12\",\"status\":\"success\"}";
+	
+	
+
+}

@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".MainActivity" >
+
+    <include
+        android:id="@+id/action_bar_layout"
+        layout="@layout/action_bar" />
+
+    <LinearLayout
+        android:id="@+id/main_ll"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/action_bar_layout"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/main_doctor_tips"
+            android:layout_width="0dip"
+            android:layout_height="50dp"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/tip_type_doctor"
+            />
+
+        <Button
+            android:id="@+id/main_individual_tips"
+            android:layout_width="0dip"
+            android:layout_height="50dp"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/tip_type_ind"
+         />
+
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/main_ll"
+        android:layout_above="@+id/googleAds" />
+    <com.ali.doctortipss.IndicatorLineView
+        android:id="@+id/viewpager_line"
+        android:layout_width="fill_parent"
+        android:layout_height="3dip"
+        android:layout_alignParentBottom="true" />
+
+    <include
+        android:id="@+id/googleAds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="3dp"
+        layout="@layout/google_ads" />
+
+</RelativeLayout>

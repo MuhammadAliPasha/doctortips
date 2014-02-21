@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DoctorTipss</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="empty_string"></string>
+    <string name="title">Apple Juice</string>
+    <string name="doctor_tips">Doctor Tips</string>
+    <string name="individual_tips">Individual Tips</string>
+    <string name="short_desc">An apple a day keeps the doctor away.</string>
+    <string name="description">This is a small description to tells you about doctor tips.Doctor tips give use some useful tips related to hair,weight loss, body, eyes, nails and many more tips.This is a small description to tells you about doctor tips.Doctor tips give use some useful tips related to hair,weight loss, body, eyes, nails and many more tips.This is a small description to tells you about doctor tips.Doctor tips give use some useful tips related to hair,weight loss, body, eyes, nails and many more tips.This is a small description to tells you about doctor tips.Doctor tips give use some useful tips related to hair,weight loss, body, eyes, nails and many more tips.</string>
+
+</resources>

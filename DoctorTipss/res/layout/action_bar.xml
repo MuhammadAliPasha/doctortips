@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/navigation_list_bg" >
+
+    <ImageButton
+        android:id="@+id/action_bar_menu_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/empty_string"
+        android:src="@drawable/actionbar_menu_btn" />
+
+    <TextView
+        android:id="@+id/action_bar_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:text="@string/doctor_tips"
+        android:textColor="#3db4c8"
+        android:textSize="24sp"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/empty_string"
+      />
+
+    <ImageButton
+        android:id="@+id/action_bar_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/empty_string"
+        android:src="@drawable/actionbar_search_btn" />
+
+</RelativeLayout>
