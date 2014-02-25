@@ -3,20 +3,17 @@ package com.ali.doctortipss;
 import java.util.ArrayList;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.util.TypedValue;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.ali.doctortipss.fancycoverflow.FancyCoverFlow;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
 
 public class TipsDetails extends Activity implements OnClickListener {
 	ImageButton actionbarBack;
@@ -24,6 +21,7 @@ public class TipsDetails extends Activity implements OnClickListener {
 	DisplayImageOptions displayOptions;
 	LinearLayout details_hs_ll;
 	ImageView img;
+	private FancyCoverFlow fancyCoverFlow;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -58,28 +56,38 @@ public class TipsDetails extends Activity implements OnClickListener {
 			dShortDesc.setText(short_description);
 			dDescription.setText(description);
 
-			for (int i = 0; i < image.size(); i++) {
+//			for (int i = 0; i < image.size(); i++) {
+//
+//				img = new ImageView(this);
+//				int dip = (int) TypedValue.applyDimension(
+//						TypedValue.COMPLEX_UNIT_DIP, (float) 1, getResources()
+//								.getDisplayMetrics());
+//				img.setLayoutParams(new LayoutParams(220 * dip, 220 * dip));
+//				img.setScaleType(ImageView.ScaleType.CENTER_CROP);
+//				ImageLoader.getInstance().displayImage(image.get(i), img,
+//						displayOptions);
+//				details_hs_ll.addView(img);
+//
+//			}
+//			img.setOnClickListener(new OnClickListener() {
+//
+//				@Override
+//				public void onClick(View arg0) {
+//					Intent openImageActivity = new Intent(TipsDetails.this,
+//							ImagePager.class);
+//					startActivity(openImageActivity);
+//				}
+//			});
+			this.fancyCoverFlow = (FancyCoverFlow) this.findViewById(R.id.fancyCoverFlow);
 
-				img = new ImageView(this);
-				int dip = (int) TypedValue.applyDimension(
-						TypedValue.COMPLEX_UNIT_DIP, (float) 1, getResources()
-								.getDisplayMetrics());
-				img.setLayoutParams(new LayoutParams(220 * dip, 220 * dip));
-				img.setScaleType(ImageView.ScaleType.CENTER_CROP);
-				ImageLoader.getInstance().displayImage(image.get(i), img,
-						displayOptions);
-				details_hs_ll.addView(img);
-
-			}
-			img.setOnClickListener(new OnClickListener() {
-
-				@Override
-				public void onClick(View arg0) {
-					Intent openImageActivity = new Intent(TipsDetails.this,
-							ImagePager.class);
-					startActivity(openImageActivity);
-				}
-			});
+	        this.fancyCoverFlow.setAdapter(new FancyCoverFlowSampleAdapter(this,image));
+	        this.fancyCoverFlow.setUnselectedAlpha(1.0f);
+	        this.fancyCoverFlow.setUnselectedSaturation(0.0f);
+	        this.fancyCoverFlow.setUnselectedScale(0.5f);
+	        this.fancyCoverFlow.setSpacing(50);
+	        this.fancyCoverFlow.setMaxRotation(0);
+	        this.fancyCoverFlow.setScaleDownGravity(0.2f);
+	        this.fancyCoverFlow.setActionDistance(FancyCoverFlow.ACTION_DISTANCE_AUTO);
 		}
 
 		actionbarBack.setOnClickListener(this);

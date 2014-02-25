@@ -36,6 +36,6 @@
         android:layout_marginRight="5dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/empty_string"
-        android:src="@drawable/actionbar_search_btn" />
+        android:src="@drawable/actionbar_menu_btn" />
 
 </RelativeLayout>
