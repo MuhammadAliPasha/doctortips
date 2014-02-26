@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +15,7 @@ import android.widget.TextView;
 public class MainAdapter extends BaseAdapter {
 	private ArrayList<Tips> _data;
 	Context _c;
-	
+	Typeface fontBold,fontRegular,fontSemiBold;
 	public MainAdapter(Context c, ArrayList<Tips> data) {
 		_data = data;
 		_c = c;
@@ -52,6 +53,12 @@ public class MainAdapter extends BaseAdapter {
 		Log.d("", "testing mainadapter position" + position);
 		TextView title = (TextView) v.findViewById(R.id.tips_title);
 		TextView shortDesc = (TextView) v.findViewById(R.id.tips_short_description);
+		fontBold = Typeface.createFromAsset(_c.getAssets(),
+				"proximanova-bold-webfont.ttf");
+		fontSemiBold = Typeface.createFromAsset(_c.getAssets(),
+				"proximanova-semibold-webfont-webfont.ttf");
+		title.setTypeface(fontBold);
+		shortDesc.setTypeface(fontSemiBold);
 		Tips tips = _data.get(position);
 		TextView strip = (TextView) v.findViewById(R.id.view1);
 		strip.setBackgroundColor(Color.parseColor(MySingleton.getInstance().colorArray[position]));

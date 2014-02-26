@@ -17,6 +17,7 @@ package com.ali.doctortipss;
 
 import java.util.ArrayList;
 
+import android.app.ActionBar.LayoutParams;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,8 +68,8 @@ public class FancyCoverFlowSampleAdapter extends FancyCoverFlowAdapter {
             Log.d("", "testing getCoverFlowItem"+i);
         } else {
             imageView = new ImageView(viewGroup.getContext());
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setLayoutParams(new FancyCoverFlow.LayoutParams(300, 300));
+            imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+            imageView.setLayoutParams(new FancyCoverFlow.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         }
         String imageUrl = MySingleton.getInstance().storageUrl+"images/"+_data.get(i);
         ImageLoader.getInstance().displayImage(imageUrl, imageView);

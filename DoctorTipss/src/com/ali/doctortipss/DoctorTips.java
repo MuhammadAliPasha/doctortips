@@ -6,7 +6,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -23,7 +22,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class DoctorTips extends Activity implements OnClickListener {
+public class DoctorTips extends BaseActivity implements OnClickListener {
 	String tipType;
 	ListView listView;
 	private Helper helper = new Helper();
@@ -32,7 +31,7 @@ public class DoctorTips extends Activity implements OnClickListener {
 	ArrayList<Tips> details = new ArrayList<Tips>();
 	MainAdapter adapter;
 	Context ctx;
-	TextView tip_title, no_record;
+	TextView tip_title, no_record,actionbarTitle;
 	ImageView tipsCoverPhoto;
 	int resId;
 	ImageButton actionbarBack;
@@ -54,7 +53,10 @@ public class DoctorTips extends Activity implements OnClickListener {
 		actionbarBack = (ImageButton) findViewById(R.id.action_bar_menu_btn);
 		actionbarBack.setImageResource(R.drawable.back);
 		actionbarBack.setOnClickListener(this);
+		actionbarTitle = (TextView) findViewById(R.id.action_bar_text);
 		no_record = (TextView) findViewById(R.id.no_record_today);
+		actionbarTitle.setText("Tip");
+		actionbarTitle.setTypeface(fontBold);
 		no_record.setVisibility(View.GONE);
 		if (!tipType.equals("")) {
 			if (tipType.equals("1")) {

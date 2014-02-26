@@ -2,26 +2,31 @@ package com.ali.doctortipss;
 
 import java.util.ArrayList;
 
-import android.app.Activity;
+import android.app.Dialog;
 import android.graphics.Bitmap;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ali.doctortipss.fancycoverflow.FancyCoverFlow;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
-public class TipsDetails extends Activity implements OnClickListener {
+public class TipsDetails extends BaseActivity implements OnClickListener {
 	ImageButton actionbarBack;
 	TextView dTitle, dShortDesc, dDescription;
 	DisplayImageOptions displayOptions;
-	LinearLayout details_hs_ll;
+//	LinearLayout details_hs_ll;
 	ImageView img;
-	private FancyCoverFlow fancyCoverFlow;
+	private FancyCoverFlow fancyCoverFlow, dialogFancyCoverFlow;
+	Dialog dialog;
+	ArrayList<String> image;
+	TextView zoom,actionbarTitle;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,16 +34,20 @@ public class TipsDetails extends Activity implements OnClickListener {
 		setContentView(R.layout.activity_tips_details);
 
 		actionbarBack = (ImageButton) findViewById(R.id.action_bar_menu_btn);
+		actionbarTitle = (TextView) findViewById(R.id.action_bar_text);
 		dTitle = (TextView) findViewById(R.id.details_title);
 		dShortDesc = (TextView) findViewById(R.id.details_short_desc);
 		dDescription = (TextView) findViewById(R.id.details_description);
-
-		details_hs_ll = (LinearLayout) findViewById(R.id.details_hs_ll);
+		actionbarTitle.setText("Tip Detail");
+		actionbarTitle.setTypeface(fontBold);
+		dTitle.setTypeface(fontBold);
+		dShortDesc.setTypeface(fontSemiBold);
+		dDescription.setTypeface(fontRegular);
 		actionbarBack.setImageResource(R.drawable.back);
 		displayOptions = new DisplayImageOptions.Builder()
-				.showImageOnLoading(R.drawable.ic_launcher)
-				.showImageForEmptyUri(R.drawable.ic_launcher)
-				.showImageOnFail(R.drawable.ic_launcher).cacheInMemory(true)
+				.showImageOnLoading(R.drawable.placeholder)
+				.showImageForEmptyUri(R.drawable.placeholder)
+				.showImageOnFail(R.drawable.placeholder).cacheInMemory(true)
 				.cacheOnDisc(true).bitmapConfig(Bitmap.Config.RGB_565).build();
 		if (getIntent().getStringExtra("id") != null) {
 			String id = getIntent().getStringExtra("id");
@@ -48,49 +57,101 @@ public class TipsDetails extends Activity implements OnClickListener {
 			String short_description = getIntent().getStringExtra(
 					"short_description");
 			String description = getIntent().getStringExtra("description");
-			ArrayList<String> image = getIntent().getStringArrayListExtra(
-					"image");
+			image = getIntent().getStringArrayListExtra("image");
 
 			// setText
 			dTitle.setText(title);
 			dShortDesc.setText(short_description);
 			dDescription.setText(description);
 
-//			for (int i = 0; i < image.size(); i++) {
-//
-//				img = new ImageView(this);
-//				int dip = (int) TypedValue.applyDimension(
-//						TypedValue.COMPLEX_UNIT_DIP, (float) 1, getResources()
-//								.getDisplayMetrics());
-//				img.setLayoutParams(new LayoutParams(220 * dip, 220 * dip));
-//				img.setScaleType(ImageView.ScaleType.CENTER_CROP);
-//				ImageLoader.getInstance().displayImage(image.get(i), img,
-//						displayOptions);
-//				details_hs_ll.addView(img);
-//
-//			}
-//			img.setOnClickListener(new OnClickListener() {
-//
-//				@Override
-//				public void onClick(View arg0) {
-//					Intent openImageActivity = new Intent(TipsDetails.this,
-//							ImagePager.class);
-//					startActivity(openImageActivity);
-//				}
-//			});
-			this.fancyCoverFlow = (FancyCoverFlow) this.findViewById(R.id.fancyCoverFlow);
+			// for (int i = 0; i < image.size(); i++) {
+			//
+			// img = new ImageView(this);
+			// int dip = (int) TypedValue.applyDimension(
+			// TypedValue.COMPLEX_UNIT_DIP, (float) 1, getResources()
+			// .getDisplayMetrics());
+			// img.setLayoutParams(new LayoutParams(220 * dip, 220 * dip));
+			// img.setScaleType(ImageView.ScaleType.CENTER_CROP);
+			// ImageLoader.getInstance().displayImage(image.get(i), img,
+			// displayOptions);
+			// details_hs_ll.addView(img);
+			//
+			// }
+			// img.setOnClickListener(new OnClickListener() {
+			//
+			// @Override
+			// public void onClick(View arg0) {
+			// Intent openImageActivity = new Intent(TipsDetails.this,
+			// ImagePager.class);
+			// startActivity(openImageActivity);
+			// }
+			// });
+			this.fancyCoverFlow = (FancyCoverFlow) this
+					.findViewById(R.id.fancyCoverFlow);
 
-	        this.fancyCoverFlow.setAdapter(new FancyCoverFlowSampleAdapter(this,image));
-	        this.fancyCoverFlow.setUnselectedAlpha(1.0f);
-	        this.fancyCoverFlow.setUnselectedSaturation(0.0f);
-	        this.fancyCoverFlow.setUnselectedScale(0.5f);
-	        this.fancyCoverFlow.setSpacing(50);
-	        this.fancyCoverFlow.setMaxRotation(0);
-	        this.fancyCoverFlow.setScaleDownGravity(0.2f);
-	        this.fancyCoverFlow.setActionDistance(FancyCoverFlow.ACTION_DISTANCE_AUTO);
+			this.fancyCoverFlow.setAdapter(new FancyCoverFlowSampleAdapter(
+					this, image));
+			this.fancyCoverFlow.setUnselectedAlpha(1.0f);
+			this.fancyCoverFlow.setUnselectedSaturation(0.0f);
+			this.fancyCoverFlow.setUnselectedScale(0.5f);
+			this.fancyCoverFlow.setSpacing(50);
+			this.fancyCoverFlow.setMaxRotation(0);
+			this.fancyCoverFlow.setScaleDownGravity(0.2f);
+			this.fancyCoverFlow
+					.setActionDistance(FancyCoverFlow.ACTION_DISTANCE_AUTO);
+			zoom = (TextView) findViewById(R.id.zoom);
+			zoom.setTypeface(fontSemiBold);
+			zoom.setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View arg0) {
+
+					imageGallery();
+				}
+			});
 		}
 
 		actionbarBack.setOnClickListener(this);
+	}
+
+	protected void imageGallery() {
+		Log.d("", "testing imageGallery");
+		dialog = new Dialog(TipsDetails.this);
+		dialog.setContentView(R.layout.dialog_image_gallery);
+		Log.d("", "testing imageGallery aa");
+
+		dialog.getWindow().setBackgroundDrawable(
+				new ColorDrawable(android.graphics.Color.TRANSPARENT));
+		Log.d("", "testing imageGallery bb");
+		Button cross = (Button) dialog.findViewById(R.id.cross);
+		this.dialogFancyCoverFlow = (FancyCoverFlow) dialog
+				.findViewById(R.id.fancyCoverFlowDialog);
+		Log.d("", "testing imageGallery cc");
+
+		this.dialogFancyCoverFlow.setAdapter(new FancyCoverFlowSampleAdapter(
+				this, image));
+		Log.d("", "testing imageGallery dd");
+		this.dialogFancyCoverFlow.setUnselectedAlpha(1.0f);
+		this.dialogFancyCoverFlow.setUnselectedSaturation(0.0f);
+		this.dialogFancyCoverFlow.setUnselectedScale(0.5f);
+		this.dialogFancyCoverFlow.setSpacing(50);
+		this.dialogFancyCoverFlow.setMaxRotation(0);
+		this.dialogFancyCoverFlow.setScaleDownGravity(0.2f);
+		Log.d("", "testing imageGallery ee");
+		this.dialogFancyCoverFlow
+				.setActionDistance(FancyCoverFlow.ACTION_DISTANCE_AUTO);
+		Log.d("", "testing imageGallery ff");
+		cross.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				dialog.dismiss();
+
+			}
+		});
+		Log.d("", "testing imageGallery gg");
+		dialog.show();
+		Log.d("", "testing imageGallery hh");
 	}
 
 	@Override

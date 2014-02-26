@@ -53,9 +53,9 @@ public class MyApplication extends Application{
 		//  ImageLoaderConfiguration.createDefault(this);
 		// method.
 		 options = new DisplayImageOptions.Builder()
-			.showImageOnLoading(R.drawable.ic_launcher_web)
-			.showImageForEmptyUri(R.drawable.ic_launcher_web)
-			.showImageOnFail(R.drawable.ic_launcher_web)
+			.showImageOnLoading(R.drawable.placeholder)
+			.showImageForEmptyUri(R.drawable.placeholder)
+			.showImageOnFail(R.drawable.placeholder)
 			.cacheInMemory(true)
 			.cacheOnDisc(true)
 			.bitmapConfig(Bitmap.Config.RGB_565)

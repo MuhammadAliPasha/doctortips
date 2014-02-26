@@ -15,13 +15,13 @@
         android:src="@drawable/actionbar_menu_btn" />
 
     <TextView
-        android:id="@+id/action_bar_logo"
+        android:id="@+id/action_bar_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerInParent="true"
         android:text="@string/doctor_tips"
-        android:textColor="#3db4c8"
+        android:textColor="#ffffff"
         android:textSize="24sp"
         android:layout_gravity="center_horizontal"
         android:contentDescription="@string/empty_string"

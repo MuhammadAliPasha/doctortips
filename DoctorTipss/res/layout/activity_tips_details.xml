@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:text="@string/title"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#ffffff" />
@@ -31,20 +31,32 @@
             android:id="@+id/details_short_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
             android:text="@string/short_desc"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#b9bfc6" />
     </LinearLayout>
 
-    <View
-        android:id="@+id/view_green"
-        android:layout_width="wrap_content"
-        android:layout_height="2dp"
+    <LinearLayout
+        android:id="@+id/view_green_ll"
+        android:layout_width="fill_parent"
+        android:layout_height="20dp"
         android:layout_below="@+id/details_ll"
-        android:background="#4ab143" />
+        android:background="#4ab143"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginTop="3dp"
+            android:gravity="center_vertical"
+            android:textColor="#ffffff"
+            android:drawableLeft="@drawable/digit_icon"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <!--
          <HorizontalScrollView
@@ -54,11 +66,11 @@
         android:layout_below="@+id/view_green" >
     -->
 
-    <LinearLayout
+    <FrameLayout
         android:id="@+id/details_hs_ll"
         android:layout_width="fill_parent"
         android:layout_height="150dp"
-        android:layout_below="@+id/view_green"
+        android:layout_below="@+id/view_green_ll"
         android:background="#ffffff"
         android:orientation="horizontal" >
 
@@ -66,20 +78,34 @@
             android:id="@+id/fancyCoverFlow"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-    </LinearLayout>
+    </FrameLayout>
     <!-- </HorizontalScrollView> -->
-     <View
-        android:id="@+id/view_green_2"
-        android:layout_width="wrap_content"
-        android:layout_height="2dp"
+
+    <LinearLayout
+        android:id="@+id/view_green_2_ll"
+        android:layout_width="fill_parent"
+        android:layout_height="20dp"
         android:layout_below="@+id/details_hs_ll"
-        android:background="#b9bfc6" />
+        android:background="#4ab143"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/zoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:gravity="center_vertical"
+            android:text="Tap to Zoom"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/view_green_2"
+        android:layout_below="@+id/view_green_2_ll"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp" >
 
@@ -92,7 +118,7 @@
             android:layout_marginRight="20dp"
             android:padding="10dp"
             android:text="@string/description"
-            android:textColor="#6a737c"
+            android:textColor="#4f4d4d"
             android:textSize="20sp" />
     </ScrollView>
 
