@@ -45,9 +45,9 @@ public class TipsDetails extends BaseActivity implements OnClickListener {
 		dDescription.setTypeface(fontRegular);
 		actionbarBack.setImageResource(R.drawable.back);
 		displayOptions = new DisplayImageOptions.Builder()
-				.showImageOnLoading(R.drawable.placeholder)
-				.showImageForEmptyUri(R.drawable.placeholder)
-				.showImageOnFail(R.drawable.placeholder).cacheInMemory(true)
+				.showImageOnLoading(R.drawable.placeholder_grey)
+				.showImageForEmptyUri(R.drawable.placeholder_grey)
+				.showImageOnFail(R.drawable.placeholder_grey).cacheInMemory(true)
 				.cacheOnDisc(true).bitmapConfig(Bitmap.Config.RGB_565).build();
 		if (getIntent().getStringExtra("id") != null) {
 			String id = getIntent().getStringExtra("id");
@@ -118,29 +118,22 @@ public class TipsDetails extends BaseActivity implements OnClickListener {
 		Log.d("", "testing imageGallery");
 		dialog = new Dialog(TipsDetails.this);
 		dialog.setContentView(R.layout.dialog_image_gallery);
-		Log.d("", "testing imageGallery aa");
-
 		dialog.getWindow().setBackgroundDrawable(
 				new ColorDrawable(android.graphics.Color.TRANSPARENT));
-		Log.d("", "testing imageGallery bb");
 		Button cross = (Button) dialog.findViewById(R.id.cross);
 		this.dialogFancyCoverFlow = (FancyCoverFlow) dialog
 				.findViewById(R.id.fancyCoverFlowDialog);
-		Log.d("", "testing imageGallery cc");
 
 		this.dialogFancyCoverFlow.setAdapter(new FancyCoverFlowSampleAdapter(
 				this, image));
-		Log.d("", "testing imageGallery dd");
 		this.dialogFancyCoverFlow.setUnselectedAlpha(1.0f);
 		this.dialogFancyCoverFlow.setUnselectedSaturation(0.0f);
 		this.dialogFancyCoverFlow.setUnselectedScale(0.5f);
 		this.dialogFancyCoverFlow.setSpacing(50);
 		this.dialogFancyCoverFlow.setMaxRotation(0);
 		this.dialogFancyCoverFlow.setScaleDownGravity(0.2f);
-		Log.d("", "testing imageGallery ee");
 		this.dialogFancyCoverFlow
 				.setActionDistance(FancyCoverFlow.ACTION_DISTANCE_AUTO);
-		Log.d("", "testing imageGallery ff");
 		cross.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -149,9 +142,7 @@ public class TipsDetails extends BaseActivity implements OnClickListener {
 
 			}
 		});
-		Log.d("", "testing imageGallery gg");
 		dialog.show();
-		Log.d("", "testing imageGallery hh");
 	}
 
 	@Override
